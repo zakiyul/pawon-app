@@ -21,14 +21,34 @@
         <p class="lead">Harga : Rp. {{ product.harga }}</p>
         <p class="lead">Rating : {{ product.rating }}</p>
         <form @submit.prevent="toKeranjang">
-          <div class="form-group">
-            <label for="jumlah">Jumlah Pesanan</label>
+          <div class="input-group mb-3">
+            <div
+              v-show="keranjang.jumlah_pesanana > 0"
+              class="input-group-prepend"
+            >
+              <button
+                type="button"
+                class="btn btn-primary"
+                @click="keranjang.jumlah_pesanana--"
+              >
+                -
+              </button>
+            </div>
             <input
               type="number"
-              id="jumlah"
-              class="form-control"
               v-model="keranjang.jumlah_pesanana"
+              class="form-control text-center jumlah-pesanan"
             />
+            <div class="input-group-append">
+              <button
+                class="btn btn-primary"
+                @click="keranjang.jumlah_pesanana++"
+                type="button"
+                id="button-addon2"
+              >
+                +
+              </button>
+            </div>
           </div>
           <div class="form-group">
             <label for="keterangan">Keterangan</label>
@@ -97,5 +117,16 @@ export default {
 }
 img {
   border-radius: 16px;
+}
+.jumlah-pesanan {
+  width: 50%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+textarea {
+  min-height: 180px;
 }
 </style>

@@ -35,6 +35,18 @@
     </nav>
   </div>
 </template>
+<script>
+// import { mapGetters } from "vuex";
+
+export default {
+  data() {
+    return {
+      total: 0,
+    };
+  },
+  // computed: mapGetters(["isiKeranjang"]),
+};
+</script>
 <style lang="scss" scoped>
 nav {
   height: 60px;

@@ -12,6 +12,8 @@
 </template>
 <script>
 import axios from "axios";
+// import { mapGetters } from "vuex";
+
 export default {
   data() {
     return {
@@ -24,5 +26,11 @@ export default {
       .then((res) => (this.keranjangs = res.data));
     // .then((res) => console.log(res.data));
   },
+  // computed: mapGetters(["isiKeranjang"]),
+  computed(){
+    isiKeranjang(){
+      return this.$store.getters.isiKeranjang
+    }
+  }
 };
 </script>

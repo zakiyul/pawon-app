@@ -13,7 +13,7 @@
         <b-icon icon="eye"></b-icon> Lihat Semua
       </router-link>
     </div>
-    <div class="row mt-3">
+    <div class="row my-5">
       <div class="col-md-4" v-for="product in bestProduct" :key="product.id">
         <ProductCard
           :id="product.id"
